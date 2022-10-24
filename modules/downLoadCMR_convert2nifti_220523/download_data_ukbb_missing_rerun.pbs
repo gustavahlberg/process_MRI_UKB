@@ -1,0 +1,23 @@
+#!/bin/bash 
+#PBS -W group_list=cu_10039 -A cu_10039
+#PBS -m n
+#PBS -l nodes=1:ppn=2,mem=8gb,walltime=172000
+#PBS -N downloadCMRrerun
+##PBS -o $PBS_JOBNAME.$PBS_JOBID.out
+##PBS -e $PBS_JOBNAME.$PBS_JOBID.err
+cd $PBS_O_WORKDIR
+
+
+N=${PBS_ARRAYID}
+echo $N
+
+csvFile=`head -${N} reRunFileList.txt | tail -1`
+dir=`(basename $csvFile) | sed -e s/ukbb_CMR_// | sed -e s/_rerun.bulk//`
+
+
+python download_data_ukbb_general.py \
+    --data_root ../../data/imgVisit/${dir} \
+    --util_dir /home/projects/cu_10039/projects/ManageUkbb/bin/ \
+    --ukbkey /home/projects/cu_10039/projects/process_MRI_UKB/.ukbkey \
+    --csv_file $csvFile \
+    --instance 2

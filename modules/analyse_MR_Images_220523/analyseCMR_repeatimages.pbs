@@ -1,0 +1,17 @@
+#!/bin/bash 
+#PBS -W group_list=cu_10039 -A cu_10039
+#PBS -m n
+#PBS -l nodes=1:ppn=4,mem=12gb,walltime=200000
+#PBS -N analyseCMR
+##PBS -o $PBS_JOBNAME.$PBS_JOBID.out
+##PBS -o $PBS_JOBNAME.$PBS_JOBID.err
+cd $PBS_O_WORKDIR
+
+
+N=${PBS_ARRAYID}
+echo $N
+
+
+
+##N=test
+bash analyseCMR_repeatimages.sh $N

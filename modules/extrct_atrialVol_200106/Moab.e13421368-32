@@ -1,0 +1,8 @@
+bin/eval_atrial_volume.py:86: RuntimeWarning: divide by zero encountered in double_scalars
+  V['LA_2ch'][t] = 8 / (3 * math.pi) * area[0] * area[0] / length[0]
+/home/people/s102176/.conda/envs/cardiacMRI/lib/python3.7/site-packages/numpy/core/fromnumeric.py:3257: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+/home/people/s102176/.conda/envs/cardiacMRI/lib/python3.7/site-packages/numpy/core/_methods.py:154: RuntimeWarning: invalid value encountered in true_divide
+  ret, rcount, out=ret, casting='unsafe', subok=False)
+bin/eval_atrial_volume.py:126: RuntimeWarning: divide by zero encountered in double_scalars
+  V['LA_4ch'][t] = 8 / (3 * math.pi) * area[0] * area[0] / length[0]

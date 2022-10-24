@@ -1,0 +1,15 @@
+**/qsubLogs
+**/logs
+**/log
+**/results
+**/result
+**/*~
+**/*.bulk
+data/*
+**/.ukbkey
+**/*sample
+**/*.txt
+**/*.tsv
+**/*.tab
+**/.Rhistory
+**/*.csv
